@@ -24,7 +24,7 @@ AllowNoIcons=yes
 LicenseFile=..\LICENSE
 OutputDir=.\Output
 OutputBaseFilename=GrafanaDashboard-Setup-{#MyAppVersion}
-
+SetupIconFile=..\assets\icon.ico
 Compression=lzma2/ultra64
 SolidCompression=yes
 WizardStyle=modern
@@ -48,13 +48,15 @@ Source: "..\install.bat"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\install.ps1"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\start-silent.vbs"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\uninstall.bat"; DestDir: "{app}"; Flags: ignoreversion
+; Assets
+Source: "..\assets\icon.ico"; DestDir: "{app}\assets"; Flags: ignoreversion
 
 [Icons]
-Name: "{group}\Start Dashboard"; Filename: "{%USERPROFILE}\grafana-dashboard\start-silent.vbs"
-Name: "{group}\Stop Dashboard"; Filename: "{%USERPROFILE}\grafana-dashboard\stop.bat"
+Name: "{group}\Start Dashboard"; Filename: "{%USERPROFILE}\grafana-dashboard\start-silent.vbs"; IconFilename: "{app}\assets\icon.ico"
+Name: "{group}\Stop Dashboard"; Filename: "{%USERPROFILE}\grafana-dashboard\stop.bat"; IconFilename: "{app}\assets\icon.ico"
 Name: "{group}\Open Dashboard in Browser"; Filename: "http://localhost:3000"
 Name: "{group}\Uninstall {#MyAppName}"; Filename: "{uninstallexe}"
-Name: "{userdesktop}\Grafana Dashboard"; Filename: "{%USERPROFILE}\grafana-dashboard\start-silent.vbs"; Tasks: desktopicon
+Name: "{commondesktop}\Grafana Dashboard"; Filename: "{%USERPROFILE}\grafana-dashboard\start-silent.vbs"; IconFilename: "{app}\assets\icon.ico"; Tasks: desktopicon
 
 [Run]
 ; Run the PowerShell installer after files are copied
@@ -75,7 +77,7 @@ Filename: "http://localhost:3000"; \
     Flags: postinstall shellexec skipifsilent unchecked
 
 [UninstallRun]
-Filename: "{app}\uninstall.bat"; Flags: waituntilterminated runhidden
+Filename: "{app}\uninstall.bat"; Flags: waituntilterminated
 
 [Registry]
 ; Startup entry (only if user selected the startup task)
