@@ -74,30 +74,33 @@ $DashYml = "$InstallDir\grafana\conf\provisioning\dashboards\dashboards.yml"
 # ==========================================
 Write-Host "-> Creating start-silent.vbs..."
 $NvidiaVbs = if ($NvidiaInstalled) { 'WshShell.Run Chr(34) & ScriptDir & "nvidia_gpu_exporter.exe" & Chr(34), 0' } else { '' }
-$VbsScript = @"
-Set WshShell = CreateObject("WScript.Shell")
-ScriptDir = Left(WScript.ScriptFullName, InStrRev(WScript.ScriptFullName, "\"))
-WshShell.Run Chr(34) & ScriptDir & "windows_exporter.exe" & Chr(34) & " --collectors.enabled=cpu,memory,net,gpu,os,logical_disk", 0
-WshShell.Run Chr(34) & ScriptDir & "prometheus\prometheus.exe" & Chr(34) & " --config.file=" & Chr(34) & ScriptDir & "prometheus\prometheus.yml" & Chr(34) & " --storage.tsdb.retention.time=1y", 0
-WshShell.CurrentDirectory = ScriptDir & "grafana\bin"
-WshShell.Run Chr(34) & ScriptDir & "grafana\bin\grafana.exe" & Chr(34) & " server --homepath ..", 0
-WshShell.CurrentDirectory = ScriptDir
-$NvidiaVbs
-Set WshShell = Nothing
-"@
+
+$VbsLines = @(
+    'Set WshShell = CreateObject("WScript.Shell")'
+    'ScriptDir = Left(WScript.ScriptFullName, InStrRev(WScript.ScriptFullName, "\"))'
+    'WshShell.Run Chr(34) & ScriptDir & "windows_exporter.exe" & Chr(34) & " --collectors.enabled=cpu,memory,net,gpu,os,logical_disk", 0'
+    'WshShell.Run Chr(34) & ScriptDir & "prometheus\prometheus.exe" & Chr(34) & " --config.file=" & Chr(34) & ScriptDir & "prometheus\prometheus.yml" & Chr(34) & " --storage.tsdb.retention.time=1y", 0'
+    'WshShell.CurrentDirectory = ScriptDir & "grafana\bin"'
+    'WshShell.Run Chr(34) & ScriptDir & "grafana\bin\grafana.exe" & Chr(34) & " server --homepath ..", 0'
+    'WshShell.CurrentDirectory = ScriptDir'
+    $NvidiaVbs
+    'Set WshShell = Nothing'
+)
+$VbsScript = $VbsLines -join "`r`n"
 Set-Content -Path "start-silent.vbs" -Value $VbsScript
 
 # ==========================================
 #  GENERATE stop.bat
 # ==========================================
-$StopScript = @"
-@echo off
-taskkill /F /IM windows_exporter.exe >nul 2>&1
-taskkill /F /IM prometheus.exe >nul 2>&1
-taskkill /F /IM grafana.exe >nul 2>&1
-taskkill /F /IM nvidia_gpu_exporter.exe >nul 2>&1
-echo All services stopped.
-"@
+$StopLines = @(
+    '@echo off'
+    'taskkill /F /IM windows_exporter.exe >nul 2>&1'
+    'taskkill /F /IM prometheus.exe >nul 2>&1'
+    'taskkill /F /IM grafana.exe >nul 2>&1'
+    'taskkill /F /IM nvidia_gpu_exporter.exe >nul 2>&1'
+    'echo All services stopped.'
+)
+$StopScript = $StopLines -join "`r`n"
 Set-Content -Path "stop.bat" -Value $StopScript
 
 Write-Host "=========================================="
