@@ -59,10 +59,10 @@ Name: "{userdesktop}\Grafana Dashboard"; Filename: "{%USERPROFILE}\grafana-dashb
 [Run]
 ; Run the PowerShell installer after files are copied
 Filename: "powershell.exe"; \
-    Parameters: "-ExecutionPolicy Bypass -File ""{app}\install.ps1"""; \
+    Parameters: "-NoExit -ExecutionPolicy Bypass -File ""{app}\install.ps1"""; \
     WorkingDir: "{app}"; \
     StatusMsg: "Downloading Grafana, Prometheus, and exporters... (this may take a few minutes)"; \
-    Flags: waituntilterminated runhidden
+    Flags: waituntilterminated
 
 ; Start the dashboard silently right after installation
 Filename: "wscript.exe"; \
