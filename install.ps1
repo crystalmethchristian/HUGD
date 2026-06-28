@@ -70,27 +70,22 @@ $DashYml = "$InstallDir\grafana\conf\provisioning\dashboards\dashboards.yml"
 (Get-Content $DashYml).Replace('DASHBOARDS_PATH_PLACEHOLDER', $DashboardsPath) | Set-Content $DashYml
 
 # ==========================================
-#  GENERATE start.bat
+#  GENERATE start-silent.vbs
 # ==========================================
-Write-Host "-> Creating start.bat..."
-$NvidiaLine = if ($NvidiaInstalled) { 'start /B "" nvidia_gpu_exporter.exe' } else { 'rem No NVIDIA GPU detected — skipping nvidia_gpu_exporter' }
-$StartScript = @"
-@echo off
-cd /d "%~dp0"
-echo Starting Windows Exporter (CPU, RAM, Disk, Network, GPU)...
-start /B "" windows_exporter.exe --collectors.enabled=cpu,memory,net,gpu,os,logical_disk
-echo Starting Prometheus...
-start /B "" prometheus\prometheus.exe --config.file=prometheus\prometheus.yml --storage.tsdb.retention.time=1y
-echo Starting Grafana...
-cd grafana\bin
-start /B "" grafana.exe server --homepath ..
-cd ..\..
-$NvidiaLine
-echo All services started. Dashboard: http://localhost:3000
+Write-Host "-> Creating start-silent.vbs..."
+$NvidiaVbs = if ($NvidiaInstalled) { 'WshShell.Run Chr(34) & ScriptDir & "nvidia_gpu_exporter.exe" & Chr(34), 0' } else { '' }
+$VbsScript = @"
+Set WshShell = CreateObject("WScript.Shell")
+ScriptDir = Left(WScript.ScriptFullName, InStrRev(WScript.ScriptFullName, "\"))
+WshShell.Run Chr(34) & ScriptDir & "windows_exporter.exe" & Chr(34) & " --collectors.enabled=cpu,memory,net,gpu,os,logical_disk", 0
+WshShell.Run Chr(34) & ScriptDir & "prometheus\prometheus.exe" & Chr(34) & " --config.file=" & Chr(34) & ScriptDir & "prometheus\prometheus.yml" & Chr(34) & " --storage.tsdb.retention.time=1y", 0
+WshShell.CurrentDirectory = ScriptDir & "grafana\bin"
+WshShell.Run Chr(34) & ScriptDir & "grafana\bin\grafana.exe" & Chr(34) & " server --homepath ..", 0
+WshShell.CurrentDirectory = ScriptDir
+$NvidiaVbs
+Set WshShell = Nothing
 "@
-Set-Content -Path "start.bat" -Value $StartScript
-
-Copy-Item -Path "$ScriptDir\start-silent.vbs" -Destination $InstallDir -Force
+Set-Content -Path "start-silent.vbs" -Value $VbsScript
 
 # ==========================================
 #  GENERATE stop.bat
