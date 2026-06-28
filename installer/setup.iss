@@ -48,15 +48,13 @@ Source: "..\install.bat"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\install.ps1"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\start-silent.vbs"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\uninstall.bat"; DestDir: "{app}"; Flags: ignoreversion
-; Assets
-
 
 [Icons]
-Name: "{group}\Start Dashboard"; Filename: "{app}\start-silent.vbs"
-Name: "{group}\Stop Dashboard"; Filename: "{app}\stop.bat"
+Name: "{group}\Start Dashboard"; Filename: "{userprofile}\grafana-dashboard\start-silent.vbs"
+Name: "{group}\Stop Dashboard"; Filename: "{userprofile}\grafana-dashboard\stop.bat"
 Name: "{group}\Open Dashboard in Browser"; Filename: "http://localhost:3000"
 Name: "{group}\Uninstall {#MyAppName}"; Filename: "{uninstallexe}"
-Name: "{userdesktop}\Grafana Dashboard"; Filename: "{app}\start-silent.vbs"; Tasks: desktopicon
+Name: "{userdesktop}\Grafana Dashboard"; Filename: "{userprofile}\grafana-dashboard\start-silent.vbs"; Tasks: desktopicon
 
 [Run]
 ; Run the PowerShell installer after files are copied
@@ -68,7 +66,7 @@ Filename: "powershell.exe"; \
 
 ; Start the dashboard silently right after installation
 Filename: "wscript.exe"; \
-    Parameters: """{app}\start-silent.vbs"""; \
+    Parameters: """{userprofile}\grafana-dashboard\start-silent.vbs"""; \
     Flags: runhidden
 
 ; Optionally open the dashboard when done
@@ -83,7 +81,7 @@ Filename: "{app}\uninstall.bat"; Flags: waituntilterminated runhidden
 ; Startup entry (only if user selected the startup task)
 Root: HKCU; Subkey: "Software\Microsoft\Windows\CurrentVersion\Run"; \
     ValueType: string; ValueName: "GrafanaDashboard"; \
-    ValueData: "wscript.exe ""{app}\start-silent.vbs"""; \
+    ValueData: "wscript.exe ""{userprofile}\grafana-dashboard\start-silent.vbs"""; \
     Flags: uninsdeletevalue; Tasks: startupicon
 
 [Code]
