@@ -56,7 +56,7 @@ Name: "{group}\Start Dashboard"; Filename: "{app}\start-silent.vbs"
 Name: "{group}\Stop Dashboard"; Filename: "{app}\stop.bat"
 Name: "{group}\Open Dashboard in Browser"; Filename: "http://localhost:3000"
 Name: "{group}\Uninstall {#MyAppName}"; Filename: "{uninstallexe}"
-Name: "{commondesktop}\Grafana Dashboard"; Filename: "{app}\start-silent.vbs"; Tasks: desktopicon
+Name: "{userdesktop}\Grafana Dashboard"; Filename: "{app}\start-silent.vbs"; Tasks: desktopicon
 
 [Run]
 ; Run the PowerShell installer after files are copied
