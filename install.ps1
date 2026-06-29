@@ -13,13 +13,19 @@ Set-Location $InstallDir
 Write-Host "-> Downloading Grafana v11.1.0..."
 Invoke-WebRequest -Uri "https://dl.grafana.com/oss/release/grafana-11.1.0.windows-amd64.zip" -OutFile "grafana.zip"
 Expand-Archive -Path "grafana.zip" -DestinationPath "." -Force
-Rename-Item -Path "grafana-v11.1.0" -NewName "grafana"
+if (Test-Path "grafana") { Remove-Item -Path "grafana" -Recurse -Force }
+Start-Sleep -Seconds 3
+cmd.exe /c "move grafana-v11.1.0 grafana >nul 2>&1"
+if (Test-Path "grafana-v11.1.0") { Rename-Item -Path "grafana-v11.1.0" -NewName "grafana" -Force }
 Remove-Item -Path "grafana.zip"
 
 Write-Host "-> Downloading Prometheus v2.53.0..."
 Invoke-WebRequest -Uri "https://github.com/prometheus/prometheus/releases/download/v2.53.0/prometheus-2.53.0.windows-amd64.zip" -OutFile "prometheus.zip"
 Expand-Archive -Path "prometheus.zip" -DestinationPath "." -Force
-Rename-Item -Path "prometheus-2.53.0.windows-amd64" -NewName "prometheus"
+if (Test-Path "prometheus") { Remove-Item -Path "prometheus" -Recurse -Force }
+Start-Sleep -Seconds 3
+cmd.exe /c "move prometheus-2.53.0.windows-amd64 prometheus >nul 2>&1"
+if (Test-Path "prometheus-2.53.0.windows-amd64") { Rename-Item -Path "prometheus-2.53.0.windows-amd64" -NewName "prometheus" -Force }
 Remove-Item -Path "prometheus.zip"
 
 Write-Host "-> Downloading Windows Exporter v0.25.1 (with GPU collector)..."
