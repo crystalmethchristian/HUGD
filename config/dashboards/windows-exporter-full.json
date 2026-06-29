@@ -375,7 +375,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "gridPos": {
         "h": 1,
@@ -388,7 +388,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "refId": "A"
         }
@@ -399,7 +399,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "Busy state of all CPU cores together",
       "fieldConfig": {
@@ -467,7 +467,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "expr": "(((count(count(windows_cpu_time_total\t{instance=\"$node\"}) by (core))) - avg(sum by (mode)(rate(windows_cpu_time_total{mode='idle',instance=\"$node\"}[$__rate_interval])))) * 100) / count(count(windows_cpu_time_total{instance=\"$node\"}) by (core))",
           "hide": false,
@@ -483,7 +483,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "",
       "fieldConfig": {
@@ -543,7 +543,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "exemplar": true,
           "expr": "sum(100 - ((windows_os_physical_memory_free_bytes{instance=\"$node\"} * 100) / windows_os_visible_memory_bytes{instance=\"$node\"}))",
@@ -563,7 +563,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "",
       "fieldConfig": {
@@ -631,7 +631,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "exemplar": true,
           "expr": "sum(((windows_os_virtual_memory_bytes{instance=\"$node\"} - windows_os_virtual_memory_free_bytes{instance=\"$node\"}) / (windows_os_virtual_memory_bytes{instance=\"$node\"} )) * 100)",
@@ -649,7 +649,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "",
       "fieldConfig": {
@@ -718,7 +718,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "exemplar": true,
           "expr": "sum(100 - ((windows_logical_disk_free_bytes{instance=\"$node\",volume=\"C:\"} * 100) / windows_logical_disk_size_bytes{instance=\"$node\",volume=\"C:\"}))",
@@ -737,7 +737,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "",
       "fieldConfig": {
@@ -806,7 +806,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "exemplar": true,
           "expr": "sum(100 - ((windows_logical_disk_free_bytes{instance=\"$node\",volume=\"D:\"} * 100) / windows_logical_disk_size_bytes{instance=\"$node\",volume=\"D:\"}))",
@@ -825,7 +825,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "",
       "fieldConfig": {
@@ -891,7 +891,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "exemplar": true,
           "expr": "sum(windows_os_time{instance=\"$node\"} - windows_system_system_up_time{instance=\"$node\"})",
@@ -909,7 +909,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "Total installed physical memory",
       "fieldConfig": {
@@ -974,7 +974,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "exemplar": true,
           "expr": "sum(windows_cs_physical_memory_bytes{instance=\"$node\"})",
@@ -992,7 +992,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "",
       "fieldConfig": {
@@ -1061,7 +1061,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "exemplar": true,
           "expr": "sum(windows_logical_disk_size_bytes{instance=\"$node\",volume=\"C:\"})",
@@ -1081,7 +1081,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "Operating System",
       "fieldConfig": {
@@ -1135,7 +1135,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1154,7 +1154,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "Installed logical processors",
       "fieldConfig": {
@@ -1218,7 +1218,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "exemplar": true,
           "expr": "windows_cs_logical_processors{instance=\"$node\"}",
@@ -1235,7 +1235,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "",
       "fieldConfig": {
@@ -1300,7 +1300,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "exemplar": true,
           "expr": "sum(windows_os_virtual_memory_bytes{instance=\"$node\"})",
@@ -1318,7 +1318,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "",
       "fieldConfig": {
@@ -1387,7 +1387,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "exemplar": true,
           "expr": "sum(windows_logical_disk_size_bytes{instance=\"$node\",volume=\"D:\"})",
@@ -1407,7 +1407,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "",
       "fieldConfig": {
@@ -1460,7 +1460,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1480,7 +1480,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "Number of user sessions for which the operating system is storing state information currently",
       "fieldConfig": {
@@ -1533,7 +1533,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "editorMode": "code",
           "exemplar": true,
@@ -1553,7 +1553,7 @@
     {
       "collapsed": false,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "gridPos": {
         "h": 1,
@@ -1566,7 +1566,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "refId": "A"
         }
@@ -1577,7 +1577,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "Basic CPU info",
       "fieldConfig": {
@@ -1738,7 +1738,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "editorMode": "code",
           "expr": "avg by (instance)(rate(windows_cpu_time_total{mode=\"privileged\",instance=\"$node\"}[$__rate_interval])) * 100",
@@ -1753,7 +1753,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "editorMode": "code",
           "expr": "avg by (instance)(rate(windows_cpu_time_total{mode='user',instance=\"$node\"}[$__rate_interval])) * 100",
@@ -1768,7 +1768,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "editorMode": "code",
           "expr": "avg by (instance)(rate(windows_cpu_time_total{mode='dpc',instance=\"$node\"}[$__rate_interval])) * 100",
@@ -1782,7 +1782,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "editorMode": "code",
           "expr": "sum by (instance)(rate(windows_cpu_time_total{mode=\"interrupt\",instance=\"$node\"}[$__rate_interval])) * 100",
@@ -1796,7 +1796,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "expr": "avg by (mode)(rate(windows_cpu_time_total{mode='idle',instance=\"$node\"}[$__rate_interval])) * 100",
           "format": "time_series",
@@ -1812,7 +1812,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "Basic memory usage",
       "fieldConfig": {
@@ -1964,7 +1964,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "expr": "windows_os_visible_memory_bytes{instance=\"$node\"}",
           "format": "time_series",
@@ -1977,7 +1977,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "expr": "windows_os_visible_memory_bytes{instance=\"$node\"}\n-\nwindows_memory_free_and_zero_page_list_bytes{instance=\"$node\"}\n- (\n    windows_memory_standby_cache_reserve_bytes{instance=\"$node\"}\n    +\n    windows_memory_standby_cache_core_bytes{instance=\"$node\"}\n    +\n    windows_memory_standby_cache_normal_priority_bytes{instance=\"$node\"}\n)",
           "format": "time_series",
@@ -1990,7 +1990,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "editorMode": "code",
           "expr": "windows_memory_standby_cache_reserve_bytes{instance=\"$node\"}\n+\nwindows_memory_standby_cache_core_bytes{instance=\"$node\"}\n+\nwindows_memory_standby_cache_normal_priority_bytes{instance=\"$node\"}",
@@ -2004,7 +2004,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "editorMode": "code",
           "expr": "windows_memory_free_and_zero_page_list_bytes{instance=\"$node\"}",
@@ -2016,7 +2016,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "editorMode": "code",
           "expr": "windows_os_paging_limit_bytes{instance=\"$node\"} - windows_os_paging_free_bytes{instance=\"$node\"}",
@@ -2035,7 +2035,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "Basic network info per interface",
       "fieldConfig": {
@@ -2475,7 +2475,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "expr": "rate(windows_net_bytes_received_total{instance=\"$node\"}[$__rate_interval])*8",
           "format": "time_series",
@@ -2487,7 +2487,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "expr": "rate(windows_net_bytes_sent_total{instance=\"$node\"}[$__rate_interval])*8",
           "format": "time_series",
@@ -2503,7 +2503,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "description": "Disk space used of all logical disks",
       "fieldConfig": {
@@ -2587,7 +2587,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "editorMode": "code",
           "expr": "100 - ((windows_logical_disk_free_bytes{instance=\"$node\"} * 100) / windows_logical_disk_size_bytes{instance=\"$node\"})",
@@ -2605,7 +2605,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "gridPos": {
         "h": 1,
@@ -2618,7 +2618,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -2768,7 +2768,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_os_visible_memory_bytes{instance=\"$node\"}",
@@ -2783,7 +2783,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_available_bytes{instance=\"$node\"}",
@@ -2798,7 +2798,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_standby_cache_reserve_bytes{instance=\"$node\"}\n+\nwindows_memory_standby_cache_core_bytes{instance=\"$node\"}\n+\nwindows_memory_standby_cache_normal_priority_bytes{instance=\"$node\"}",
@@ -2812,7 +2812,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_free_and_zero_page_list_bytes{instance=\"$node\"}",
@@ -2824,7 +2824,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_modified_page_list_bytes{instance=\"$node\"}",
@@ -2843,7 +2843,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -2971,7 +2971,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_os_paging_limit_bytes{instance=\"$node\"}",
@@ -2986,7 +2986,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_os_paging_free_bytes{instance=\"$node\"}",
@@ -3005,7 +3005,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -3094,7 +3094,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_standby_cache_core_bytes{instance=\"$node\"}",
@@ -3109,7 +3109,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_standby_cache_normal_priority_bytes{instance=\"$node\"}",
@@ -3124,7 +3124,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_standby_cache_reserve_bytes{instance=\"$node\"}",
@@ -3143,7 +3143,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -3251,7 +3251,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_committed_bytes{instance=\"$node\"}",
@@ -3265,7 +3265,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_commit_limit{instance=\"$node\"}",
@@ -3283,7 +3283,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "The paged/non-paged pool is an area of the system virtual memory that is used for objects that can/cannot be written to disk when they are not being used.",
           "fieldConfig": {
@@ -3369,7 +3369,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_pool_nonpaged_bytes{instance=\"$node\"}",
@@ -3384,7 +3384,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_pool_paged_bytes{instance=\"$node\"}",
@@ -3399,7 +3399,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_pool_paged_resident_bytes{instance=\"$node\"}",
@@ -3418,7 +3418,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -3504,7 +3504,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_cache_bytes{instance=\"$node\"}",
@@ -3519,7 +3519,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_cache_bytes_peak{instance=\"$node\"}",
@@ -3534,7 +3534,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_system_cache_resident_bytes{instance=\"$node\"}",
@@ -3553,7 +3553,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -3639,7 +3639,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_page_faults_total{instance=\"$node\"}[$__rate_interval])",
@@ -3654,7 +3654,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_transition_faults_total{instance=\"$node\"}[$__rate_interval])",
@@ -3669,7 +3669,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_transition_pages_repurposed_total{instance=\"$node\"}[$__rate_interval])",
@@ -3685,7 +3685,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_write_copies_total{instance=\"$node\"}[$__rate_interval])",
@@ -3701,7 +3701,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_cache_faults_total{instance=\"$node\"}[$__rate_interval])",
@@ -3717,7 +3717,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_demand_zero_faults_total{instance=\"$node\"}[$__rate_interval])",
@@ -3737,7 +3737,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -3823,7 +3823,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_swap_page_reads_total{instance=\"$node\"}[$__rate_interval])",
@@ -3838,7 +3838,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_swap_pages_read_total{instance=\"$node\"}[$__rate_interval])",
@@ -3853,7 +3853,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_swap_page_writes_total{instance=\"$node\"}[$__rate_interval])",
@@ -3869,7 +3869,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_swap_pages_written_total{instance=\"$node\"}[$__rate_interval])",
@@ -3885,7 +3885,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_swap_page_operations_total{instance=\"$node\"}[$__rate_interval])",
@@ -3905,7 +3905,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "These values do not include pages that must remain in physical memory and cannot be written to disk",
           "fieldConfig": {
@@ -3991,7 +3991,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_system_code_resident_bytes{instance=\"$node\"}",
@@ -4006,7 +4006,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_system_code_total_bytes{instance=\"$node\"}",
@@ -4021,7 +4021,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_system_driver_resident_bytes{instance=\"$node\"}",
@@ -4036,7 +4036,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_memory_system_driver_total_bytes{instance=\"$node\"}",
@@ -4055,7 +4055,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Number of calls to allocate space in the paged/non-paged pool, regardless of the amount of space allocated in each call",
           "fieldConfig": {
@@ -4141,7 +4141,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_pool_nonpaged_allocs_total{instance=\"$node\"}[$__rate_interval])",
@@ -4156,7 +4156,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_memory_pool_paged_allocs_total{instance=\"$node\"}[$__rate_interval])",
@@ -4176,7 +4176,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "refId": "A"
         }
@@ -4187,7 +4187,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "gridPos": {
         "h": 1,
@@ -4200,7 +4200,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -4287,7 +4287,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "expr": "rate(windows_system_context_switches_total{instance=\"$node\"}[$__rate_interval])",
               "format": "time_series",
@@ -4299,7 +4299,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "sum(rate(windows_cpu_interrupts_total{instance=\"$node\"}[$__rate_interval]))",
@@ -4318,7 +4318,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -4405,7 +4405,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_cpu_interrupts_total{instance=\"$node\"}[$__rate_interval])",
@@ -4424,7 +4424,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Total number of received and serviced clock tick interrupts",
           "fieldConfig": {
@@ -4512,7 +4512,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_cpu_clock_interrupts_total{instance=\"$node\"}[$__rate_interval])",
@@ -4531,7 +4531,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Total number of time processor was woken from idle\t",
           "fieldConfig": {
@@ -4619,7 +4619,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_cpu_idle_break_events_total{instance=\"$node\"}[$__rate_interval])",
@@ -4638,7 +4638,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -4725,7 +4725,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_cpu_dpcs_total{instance=\"$node\"}[$__rate_interval])",
@@ -4743,7 +4743,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -4830,7 +4830,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "avg by(state) (rate(windows_cpu_cstate_seconds_total{instance=\"$node\"}[$__rate_interval]))",
@@ -4848,7 +4848,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Parking Status represents whether a processor is parked or not",
           "fieldConfig": {
@@ -4931,7 +4931,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_cpu_parking_status{instance=\"$node\"}",
@@ -4949,7 +4949,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -5036,7 +5036,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_cpu_core_frequency_mhz{instance=\"$node\"}*1000",
@@ -5055,7 +5055,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -5142,7 +5142,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_system_exception_dispatches_total{instance=\"$node\"}[$__rate_interval])",
@@ -5160,7 +5160,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Number of threads in the processor queue. There is a single queue for processor time even on computers with multiple processors.",
           "fieldConfig": {
@@ -5248,7 +5248,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_system_processor_queue_length{instance=\"$node\"}",
@@ -5266,7 +5266,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -5373,7 +5373,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "expr": "process_max_fds{instance=\"$node\"}",
               "interval": "",
@@ -5385,7 +5385,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "expr": "process_open_fds{instance=\"$node\"}",
               "interval": "",
@@ -5401,7 +5401,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -5487,7 +5487,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "expr": "rate(process_cpu_seconds_total{instance=\"$node\"}[$__rate_interval])",
               "format": "time_series",
@@ -5504,7 +5504,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -5592,7 +5592,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_os_processes{instance=\"$node\"}",
@@ -5607,7 +5607,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_os_processes_limit{instance=\"$node\"}",
@@ -5622,7 +5622,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_system_threads{instance=\"$node\"}",
@@ -5641,7 +5641,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Total combined calls to Windows NT system service routines by all processes running on the computer",
           "fieldConfig": {
@@ -5729,7 +5729,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_system_system_calls_total{instance=\"$node\"}[$__rate_interval])",
@@ -5749,7 +5749,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "refId": "A"
         }
@@ -5760,7 +5760,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "gridPos": {
         "h": 1,
@@ -5773,7 +5773,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Absolute time offset between the system clock and the chosen time source, in seconds.",
           "fieldConfig": {
@@ -5876,7 +5876,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_time_computed_time_offset_seconds{instance=\"$node\"}",
@@ -5892,7 +5892,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_time_ntp_round_trip_delay_seconds{instance=\"$node\"}",
@@ -5908,7 +5908,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Total adjustment made to the local system clock frequency by W32Time in parts per billion (PPB) units. 1 PPB adjustment implies the system clock was adjusted at a rate of 1 nanosecond per second (1 ns/s). The smallest possible adjustment can vary and is expected to be in the order of 100's of PPB.",
           "fieldConfig": {
@@ -5995,7 +5995,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_time_clock_frequency_adjustment_ppb_total{instance=\"$node\"}",
@@ -6014,7 +6014,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -6112,7 +6112,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_time_ntp_server_outgoing_responses_total{instance=\"$node\"}[$__rate_interval])",
@@ -6127,7 +6127,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_time_ntp_server_incoming_requests_total{instance=\"$node\"}[$__rate_interval])",
@@ -6146,7 +6146,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Active number of NTP Time sources being used by the client. This is a count of active, distinct IP addresses of time servers that are responding to this client's requests.",
           "fieldConfig": {
@@ -6229,7 +6229,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_time_ntp_client_time_sources{instance=\"$node\"}",
@@ -6249,7 +6249,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "refId": "A"
         }
@@ -6260,7 +6260,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "gridPos": {
         "h": 1,
@@ -6273,7 +6273,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -6361,7 +6361,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_logical_disk_free_bytes{instance=\"$node\"}",
@@ -6381,7 +6381,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -6469,7 +6469,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_logical_disk_size_bytes{instance=\"$node\"}-windows_logical_disk_free_bytes{instance=\"$node\"}",
@@ -6490,7 +6490,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "refId": "A"
         }
@@ -6501,7 +6501,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "gridPos": {
         "h": 1,
@@ -6514,7 +6514,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -6689,7 +6689,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_logical_disk_reads_total{instance=\"$node\"}[$__rate_interval])",
@@ -6702,7 +6702,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_logical_disk_writes_total{instance=\"$node\"}[$__rate_interval])",
@@ -6720,7 +6720,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -6907,7 +6907,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_logical_disk_read_bytes_total{instance=\"$node\"}[$__rate_interval])",
@@ -6922,7 +6922,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_logical_disk_write_bytes_total{instance=\"$node\"}[$__rate_interval])",
@@ -6941,7 +6941,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -7053,7 +7053,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_logical_disk_read_seconds_total{instance=\"$node\"}[$__rate_interval])",
@@ -7069,7 +7069,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_logical_disk_write_seconds_total{instance=\"$node\"}[$__rate_interval])",
@@ -7089,7 +7089,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "The average queue length of the requests that were issued to the device",
           "fieldConfig": {
@@ -7190,7 +7190,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_logical_disk_avg_read_requests_queued{instance=\"$node\"}",
@@ -7205,7 +7205,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_logical_disk_avg_write_requests_queued{instance=\"$node\"}",
@@ -7220,7 +7220,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_logical_disk_requests_queued{instance=\"$node\"}",
@@ -7236,7 +7236,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Percentage of elapsed time during which I/O requests were issued to the device (bandwidth utilization for the device). Device saturation occurs when this value is close to 100% for devices serving requests serially.  But for devices  serving requests in parallel, such as RAID arrays and modern SSDs, this number does not reflect their performance limits.",
           "fieldConfig": {
@@ -7411,7 +7411,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_logical_disk_read_seconds_total{instance=\"$node\"}[$__rate_interval])",
@@ -7425,7 +7425,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_logical_disk_write_seconds_total{instance=\"$node\"}[$__rate_interval])",
@@ -7443,7 +7443,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Disk idle time (not servicing read/write requests)",
           "fieldConfig": {
@@ -7618,7 +7618,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_logical_disk_idle_seconds_total{instance=\"$node\"}[$__rate_interval])",
@@ -7636,7 +7636,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Number of I/Os to the disk split into multiple I/Os",
           "fieldConfig": {
@@ -7799,7 +7799,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_logical_disk_split_ios_total{instance=\"$node\"}[$__rate_interval])",
@@ -7817,7 +7817,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "refId": "A"
         }
@@ -7828,7 +7828,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "gridPos": {
         "h": 1,
@@ -7841,7 +7841,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -8000,7 +8000,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_net_bytes_received_total{instance=\"$node\"}[$__rate_interval])*8",
@@ -8014,7 +8014,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_net_bytes_sent_total{instance=\"$node\"}[$__rate_interval])*8",
@@ -8032,7 +8032,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -8147,7 +8147,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_net_packets_received_total{instance=\"$node\"}[$__rate_interval])",
@@ -8162,7 +8162,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_net_packets_sent_total{instance=\"$node\"}[$__rate_interval])",
@@ -8181,7 +8181,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -8281,7 +8281,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_net_packets_received_discarded_total{instance=\"$node\"}[$__rate_interval])",
@@ -8295,7 +8295,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_net_packets_outbound_discarded_total{instance=\"$node\"}[$__rate_interval])",
@@ -8313,7 +8313,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -8413,7 +8413,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_net_packets_received_errors_total{instance=\"$node\"}[$__rate_interval])",
@@ -8427,7 +8427,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_net_packets_outbound_errors_total{instance=\"$node\"}[$__rate_interval])",
@@ -8445,7 +8445,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -8533,7 +8533,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_net_current_bandwidth_bytes{instance=\"$node\"}",
@@ -8551,7 +8551,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Total packets received by interface that were discarded because of an unknown or unsupported protocol\t",
           "fieldConfig": {
@@ -8652,7 +8652,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_net_packets_received_unknown_total{instance=\"$node\"}[$__rate_interval])",
@@ -8671,7 +8671,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "refId": "A"
         }
@@ -8682,7 +8682,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "gridPos": {
         "h": 1,
@@ -8695,7 +8695,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -8802,7 +8802,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_tcp_connections_established{instance=\"$node\"}",
@@ -8822,7 +8822,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -8910,7 +8910,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_tcp_segments_retransmitted_total{instance=\"$node\"}[$__rate_interval])",
@@ -8930,7 +8930,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -9041,7 +9041,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_tcp_segments_received_total{instance=\"$node\",af=\"ipv4\"}[$__rate_interval])",
@@ -9056,7 +9056,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_tcp_segments_sent_total{instance=\"$node\",af=\"ipv4\"}[$__rate_interval])",
@@ -9071,7 +9071,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_tcp_segments_retransmitted_total{instance=\"$node\",af=\"ipv4\"}[$__rate_interval])",
@@ -9091,7 +9091,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -9202,7 +9202,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_tcp_segments_received_total{instance=\"$node\",af=\"ipv6\"}[$__rate_interval])",
@@ -9217,7 +9217,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_tcp_segments_sent_total{instance=\"$node\",af=\"ipv6\"}[$__rate_interval])",
@@ -9232,7 +9232,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_tcp_segments_retransmitted_total{instance=\"$node\",af=\"ipv6\"}[$__rate_interval])",
@@ -9252,7 +9252,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -9351,7 +9351,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "expr": "rate(windows_tcp_connections_active_total{instance=\"$node\",af=\"ipv4\"}[$__rate_interval])",
               "format": "time_series",
@@ -9364,7 +9364,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "expr": "rate(windows_tcp_connections_passive_total{instance=\"$node\",af=\"ipv4\"}[$__rate_interval])",
               "format": "time_series",
@@ -9381,7 +9381,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "fieldConfig": {
             "defaults": {
@@ -9480,7 +9480,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "expr": "rate(windows_tcp_connections_active_total{instance=\"$node\",af=\"ipv6\"}[$__rate_interval])",
               "format": "time_series",
@@ -9493,7 +9493,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "expr": "rate(windows_tcp_connections_passive_total{instance=\"$node\",af=\"ipv6\"}[$__rate_interval])",
               "format": "time_series",
@@ -9510,7 +9510,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "TCP connections have made a direct transition to the CLOSED state from the SYN-SENT state or the SYN-RCVD state, plus the number of times TCP connections have made a direct transition from the SYN-RCVD state to the LISTEN state",
           "fieldConfig": {
@@ -9598,7 +9598,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "rate(windows_tcp_connection_failures_total{instance=\"$node\"}[$__rate_interval])",
@@ -9619,7 +9619,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "refId": "A"
         }
@@ -9630,7 +9630,7 @@
     {
       "collapsed": true,
       "datasource": {
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "000000001"
       },
       "gridPos": {
         "h": 1,
@@ -9643,7 +9643,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -9750,7 +9750,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "expr": "windows_exporter_collector_success{instance=\"$node\"}",
               "format": "time_series",
@@ -9768,7 +9768,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -9855,7 +9855,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "expr": "windows_exporter_collector_duration_seconds{instance=\"$node\"}",
               "format": "time_series",
@@ -9873,7 +9873,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -9960,7 +9960,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "expr": "windows_exporter_perflib_snapshot_duration_seconds{instance=\"$node\"}",
@@ -9980,7 +9980,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -10033,7 +10033,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -10053,7 +10053,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -10106,7 +10106,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -10126,7 +10126,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "",
           "fieldConfig": {
@@ -10179,7 +10179,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -10199,7 +10199,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "FQDN",
           "fieldConfig": {
@@ -10252,7 +10252,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -10271,7 +10271,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "description": "Hostname",
           "fieldConfig": {
@@ -10324,7 +10324,7 @@
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "${DS_PROMETHEUS}"
+                "uid": "000000001"
               },
               "editorMode": "code",
               "exemplar": true,
@@ -10344,7 +10344,7 @@
       "targets": [
         {
           "datasource": {
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "000000001"
           },
           "refId": "A"
         }
@@ -10391,7 +10391,7 @@
       {
         "datasource": {
           "type": "prometheus",
-          "uid": "${DS_PROMETHEUS}"
+          "uid": "000000001"
         },
         "definition": "label_values(windows_os_info{}, instance)",
         "hide": 0,

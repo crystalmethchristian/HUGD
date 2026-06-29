@@ -24,7 +24,6 @@ AllowNoIcons=yes
 LicenseFile=..\LICENSE
 OutputDir=.\Output
 OutputBaseFilename=GrafanaDashboard-Setup-{#MyAppVersion}
-
 Compression=lzma2/ultra64
 SolidCompression=yes
 WizardStyle=modern
@@ -48,16 +47,17 @@ Source: "..\install.bat"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\install.ps1"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\start-silent.vbs"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\uninstall.bat"; DestDir: "{app}"; Flags: ignoreversion
+; Assets
 
 [Icons]
 Name: "{group}\Start Dashboard"; Filename: "{%USERPROFILE}\grafana-dashboard\start-silent.vbs"
 Name: "{group}\Stop Dashboard"; Filename: "{%USERPROFILE}\grafana-dashboard\stop.bat"
 Name: "{group}\Open Dashboard in Browser"; Filename: "http://localhost:3000"
 Name: "{group}\Uninstall {#MyAppName}"; Filename: "{uninstallexe}"
-Name: "{userdesktop}\Grafana Dashboard"; Filename: "{%USERPROFILE}\grafana-dashboard\start-silent.vbs"; Tasks: desktopicon
+Name: "{commondesktop}\Grafana Dashboard"; Filename: "{%USERPROFILE}\grafana-dashboard\start-silent.vbs"; Tasks: desktopicon
 
 [Run]
-; Run the PowerShell installer after files are copied (with -NoExit so we can see any red errors)
+; Run the PowerShell installer after files are copied
 Filename: "powershell.exe"; \
     Parameters: "-NoExit -ExecutionPolicy Bypass -File ""{app}\install.ps1"""; \
     WorkingDir: "{app}"; \
