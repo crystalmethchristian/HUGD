@@ -48,7 +48,7 @@ if ($nvidiaSmi) {
     $NvidiaInstalled = $true
     Write-Host "   nvidia_gpu_exporter.exe installed. Metrics on port 9835."
 } else {
-    Write-Host "   No NVIDIA GPU detected — skipping nvidia_gpu_exporter."
+    Write-Host "   No NVIDIA GPU detected - skipping nvidia_gpu_exporter."
     Write-Host "   AMD/Intel GPU metrics will be collected via windows_exporter GPU collector."
 }
 
